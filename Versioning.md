@@ -11,9 +11,8 @@ This document applies to all versions of Mile.Windows.NtCrt.
 
 ## The rule for build and revision number
 
-The build number is the number of days since March 21, 2024 because this is the
-day I started to find the way to rethink using the CRT functions from Windows
- Driver Kit and/or ntdll.dll.
+The build number is the number of days since December 29, 2024 because this is
+the day I create the Mile.Windows.NtCrt project.
 
 The revision number is the number of releases releases in the day corresponding
 to the build number, and it counts from zero. So the first revision is 0 and 
