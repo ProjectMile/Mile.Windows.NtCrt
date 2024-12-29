@@ -10,11 +10,19 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
         private static readonly string ReferencesRootPath =
             ProjectRootPath + @"\Mile.NtCrt.References";
 
+        private static readonly string ConsoleOutputSeparator =
+            "------------------------------------------------------------";
+
         private static readonly string[] SupportedPlatforms =
         {
             "arm64",
             "x64"
         };
+
+        private static void PrintSeparator()
+        {
+            Console.WriteLine(ConsoleOutputSeparator);
+        }
 
         private static void GenerateUefiCrtObjectsSymbolsLists()
         {
@@ -99,7 +107,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
                 Console.WriteLine("{0} Common Symbols", Platform);
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
                 foreach (var Category in Categories)
                 {
                     if (IncludeObjectList.Contains(Category.Key))
@@ -115,7 +123,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                         }
                     }
                 }
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
             }
 
             foreach (string Platform in SupportedPlatforms)
@@ -129,7 +137,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
                 Console.WriteLine("{0} Specialized Symbols", Platform);
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
                 foreach (var Category in Categories)
                 {
                     if (!IncludeObjectList.Contains(Category.Key))
@@ -137,7 +145,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                         Console.WriteLine("{0}", Category.Key);
                     }
                 }
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
             }
         }
 
