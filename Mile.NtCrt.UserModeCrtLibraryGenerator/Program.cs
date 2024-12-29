@@ -10,6 +10,9 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
         private static readonly string ReferencesRootPath =
             ProjectRootPath + @"\Mile.NtCrt.References";
 
+        private static readonly string ConsoleOutputSeparator =
+            "------------------------------------------------------------";
+
         private static readonly string[] SupportedPlatforms =
         {
             "arm64",
@@ -46,6 +49,11 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             "Win",
             "Zw"
         };
+
+        private static void PrintSeparator()
+        {
+            Console.WriteLine(ConsoleOutputSeparator);
+        }
 
         private static void PrintNtDllCrtSymbolsLists(
             SortedDictionary<string, SortedSet<string>> Categories)
@@ -90,21 +98,21 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                             ReferencesRootPath,
                             Platform));
                 Console.WriteLine("{0} Symbols", Platform);
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
                 PrintNtDllCrtSymbolsLists(
                     ImageArchive.CategorizeSymbols(
                         Library.Symbols,
                         Platform == "x86"));
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
                 if (Library.EcSymbols == null)
                 {
                     continue;
                 }
                 Console.WriteLine("arm64ec Symbols");
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
                 PrintNtDllCrtSymbolsLists(
                     ImageArchive.CategorizeSymbols(Library.EcSymbols));
-                Console.WriteLine("----------------------------------------");
+                PrintSeparator();
             }
         }
 
