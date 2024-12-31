@@ -49,7 +49,7 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             }
         }
 
-        private static void PrintNtDllCrtSymbolsLists(
+        private static void PrintNtCrtSymbolsLists(
             SortedDictionary<string, SortedSet<string>> Categories)
         {
             RemoveNtSymbols(Categories);
@@ -65,6 +65,8 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
 
         private static void GenerateNtDllCrtSymbolsLists()
         {
+            SortedDictionary<string, List<(string, string)>> Sources =
+                new SortedDictionary<string, List<(string, string)>>();
             foreach (string Platform in SupportedPlatforms)
             {
                 ImageArchive.Archive Library =
@@ -73,21 +75,25 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                             @"{0}\Lib\10.0.26100.0\{1}\ntdllp.lib",
                             ReferencesRootPath,
                             Platform));
-                Console.WriteLine("{0} Symbols", Platform);
-                PrintSeparator();
-                PrintNtDllCrtSymbolsLists(
-                    ImageArchive.CategorizeSymbols(
-                        Library.Symbols,
-                        Platform == "x86"));
-                PrintSeparator();
-                if (Library.EcSymbols == null)
+                if (Library.Symbols != null)
                 {
-                    continue;
+                    Sources.Add(Platform, Library.Symbols);
                 }
-                Console.WriteLine("arm64ec Symbols");
+                if (Library.EcSymbols != null)
+                {
+                    Sources.Add("arm64ec", Library.EcSymbols);
+                }
+            }
+            Console.WriteLine("ntdllp.lib");
+            PrintSeparator();
+            foreach (var Source in Sources)
+            {
+                Console.WriteLine("{0} Symbols", Source.Key);
                 PrintSeparator();
-                PrintNtDllCrtSymbolsLists(
-                    ImageArchive.CategorizeSymbols(Library.EcSymbols));
+                PrintNtCrtSymbolsLists(
+                    ImageArchive.CategorizeSymbols(
+                        Source.Value,
+                        Source.Key == "x86"));
                 PrintSeparator();
             }
         }
