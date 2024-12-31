@@ -98,9 +98,43 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             }
         }
 
+        private static void GenerateNtKernelCrtSymbolsLists()
+        {
+            SortedDictionary<string, List<(string, string)>> Sources =
+                new SortedDictionary<string, List<(string, string)>>();
+            foreach (string Platform in SupportedPlatforms)
+            {
+                if (Platform == "x86")
+                {
+                    continue;
+                }
+                ImageArchive.Archive Library =
+                    ImageArchive.Parse(
+                        string.Format(
+                            @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
+                            ReferencesRootPath,
+                            Platform));
+                if (Library.Symbols != null)
+                {
+                    Sources.Add(Platform, Library.Symbols);
+                }
+            }
+            Console.WriteLine("ntoskrnl.lib");
+            PrintSeparator();
+            foreach (var Source in Sources)
+            {
+                Console.WriteLine("{0} Symbols", Source.Key);
+                PrintSeparator();
+                PrintNtCrtSymbolsLists(
+                    ImageArchive.CategorizeSymbols(Source.Value));
+                PrintSeparator();
+            }
+        }
+
         static void Main(string[] args)
         {
             GenerateNtDllCrtSymbolsLists();
+            GenerateNtKernelCrtSymbolsLists();
 
             Console.WriteLine(
                 "{0} task has been completed.",
