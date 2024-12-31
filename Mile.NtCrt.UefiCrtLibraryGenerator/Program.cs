@@ -10,9 +10,6 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
         private static readonly string ReferencesRootPath =
             ProjectRootPath + @"\Mile.NtCrt.References";
 
-        private static readonly string ConsoleOutputSeparator =
-            "------------------------------------------------------------";
-
         private static readonly string[] SupportedPlatforms =
         {
             "arm64",
@@ -21,7 +18,8 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
 
         private static void PrintSeparator()
         {
-            Console.WriteLine(ConsoleOutputSeparator);
+            Console.WriteLine(
+                "------------------------------------------------------------");
         }
 
         private static void GenerateUefiCrtObjectsSymbolsLists()
