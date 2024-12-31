@@ -17,64 +17,42 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             "x86"
         };
 
-        private static readonly string[] ExcludedNtPrefixes =
-        {
-            "A_",
-            "Alpc",
-            "Cpu",
-            "Csr",
-            "Dbg",
-            "Etw",
-            "Evt",
-            "Ki",
-            "Ldr",
-            "MD4",
-            "MD5",
-            "Microsoft",
-            "Nls",
-            "Nt",
-            "Pfx",
-            "Process",
-            "Pss",
-            "Rtl",
-            "Sb",
-            "Ship",
-            "Tp",
-            "vDbg",
-            "Ver",
-            "Wer",
-            "Win",
-            "Zw"
-        };
-
         private static void PrintSeparator()
         {
             Console.WriteLine(
                 "------------------------------------------------------------");
         }
 
-        private static void PrintNtDllCrtSymbolsLists(
+        private static void RemoveNtSymbols(
             SortedDictionary<string, SortedSet<string>> Categories)
         {
-            Console.WriteLine("ntdll.dll");
-            foreach (string Symbol in Categories["ntdll.dll"])
+            string[] Modules = { "ntdll.dll", "ntoskrnl.exe" };
+            foreach (string Module in Modules)
             {
-                bool Excluded = false;
-                foreach (string ExcludedPrefix in ExcludedNtPrefixes)
-                {
-                    if (Symbol.StartsWith(ExcludedPrefix))
-                    {
-                        Excluded = true;
-                        break;
-                    }
-                }
-                if (Excluded)
+                if (!Categories.ContainsKey(Module))
                 {
                     continue;
                 }
-                Console.WriteLine("\t{0}", Symbol);
+                SortedSet<string> Modified = new SortedSet<string>();
+                foreach (string Symbol in Categories[Module])
+                {
+                    if (char.IsUpper(Symbol[0]) ||
+                        Symbol.StartsWith("psMUITest") ||
+                        Symbol.StartsWith("vDbg") ||
+                        Symbol.StartsWith("@Rtl"))
+                    {
+                        continue;
+                    }
+                    Modified.Add(Symbol);
+                }
+                Categories[Module] = Modified;
             }
-            Categories.Remove("ntdll.dll");
+        }
+
+        private static void PrintNtDllCrtSymbolsLists(
+            SortedDictionary<string, SortedSet<string>> Categories)
+        {
+            RemoveNtSymbols(Categories);
             foreach (var Category in Categories)
             {
                 Console.WriteLine("{0}", Category.Key);
