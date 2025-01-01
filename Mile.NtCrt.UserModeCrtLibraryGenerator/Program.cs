@@ -131,10 +131,50 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             }
         }
 
+        private static void GenerateAdditionalSymbolLists()
+        {
+            Console.WriteLine("Additional Symbols");
+            PrintSeparator();
+            foreach (string Platform in SupportedPlatforms)
+            {
+                if (Platform == "x86")
+                {
+                    continue;
+                }
+                Console.WriteLine("{0} Symbols", Platform);
+                PrintSeparator();
+                SortedSet<string> StaticList = ImageArchive.ListSymbols(
+                    ImageArchive.Parse(
+                        string.Format(
+                            @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
+                            ReferencesRootPath,
+                            Platform)).Symbols);
+                SortedDictionary<string, SortedSet<string>> DynamicCategories =
+                    ImageArchive.CategorizeSymbols(
+                        ImageArchive.Parse(
+                            string.Format(
+                                @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
+                                ReferencesRootPath,
+                                Platform)).Symbols);
+                RemoveNtSymbols(DynamicCategories);
+                SortedSet<string> DynamicList =
+                    ImageArchive.ListSymbols(DynamicCategories);
+                foreach (string Symbol in DynamicList)
+                {
+                    if (!StaticList.Contains(Symbol))
+                    {
+                        Console.WriteLine(Symbol);
+                    }
+                }
+                PrintSeparator();
+            }
+        }
+
         static void Main(string[] args)
         {
             GenerateNtDllCrtSymbolsLists();
             GenerateNtKernelCrtSymbolsLists();
+            GenerateAdditionalSymbolLists();
 
             Console.WriteLine(
                 "{0} task has been completed.",
