@@ -1,15 +1,10 @@
-﻿using Mile.Project.Helpers;
+﻿using Mile.NtCrt.GeneratorCore;
+using Mile.Project.Helpers;
 
 namespace Mile.NtCrt.UserModeCrtLibraryGenerator
 {
     internal class Program
     {
-        private static readonly string ProjectRootPath =
-           GitRepository.GetRootPath();
-
-        private static readonly string ReferencesRootPath =
-            ProjectRootPath + @"\Mile.NtCrt.References";
-
         private static readonly string[] SupportedPlatforms =
         {
             "arm64",
@@ -73,7 +68,7 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\ntdllp.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 if (Library.Symbols != null)
                 {
@@ -112,7 +107,7 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 if (Library.Symbols != null)
                 {
@@ -147,14 +142,14 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform)).Symbols);
                 SortedDictionary<string, SortedSet<string>> DynamicCategories =
                     ImageArchive.CategorizeSymbols(
                         ImageArchive.Parse(
                             string.Format(
                                 @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
-                                ReferencesRootPath,
+                                ProjectPath.ReferencesRoot,
                                 Platform)).Symbols);
                 RemoveNtSymbols(DynamicCategories);
                 SortedSet<string> DynamicList =

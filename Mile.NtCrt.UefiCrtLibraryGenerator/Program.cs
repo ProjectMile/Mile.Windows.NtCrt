@@ -1,15 +1,10 @@
-﻿using Mile.Project.Helpers;
+﻿using Mile.NtCrt.GeneratorCore;
+using Mile.Project.Helpers;
 
 namespace Mile.NtCrt.UefiCrtLibraryGenerator
 {
     internal class Program
     {
-        private static readonly string ProjectRootPath =
-           GitRepository.GetRootPath();
-
-        private static readonly string ReferencesRootPath =
-            ProjectRootPath + @"\Mile.NtCrt.References";
-
         private static readonly string[] SupportedPlatforms =
         {
             "arm64",
@@ -32,7 +27,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 SortedSet<string> Symbols =
                     ImageArchive.ListSymbols(Library.Symbols);
@@ -57,7 +52,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
@@ -100,7 +95,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
@@ -130,7 +125,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                     ImageArchive.Parse(
                         string.Format(
                             @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ReferencesRootPath,
+                            ProjectPath.ReferencesRoot,
                             Platform));
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
