@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mile.Project.Helpers" Version="1.0.643" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Mile.NtCrt.GeneratorCore\Mile.NtCrt.GeneratorCore.csproj" />
   </ItemGroup>
 

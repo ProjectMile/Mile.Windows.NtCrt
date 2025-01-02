@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mile.Project.Helpers" Version="1.0.643" />
+  </ItemGroup>
+
 </Project>
