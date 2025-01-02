@@ -60,10 +60,10 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             {
                 ImageArchive.Archive Library =
                     ImageArchive.Parse(
-                        string.Format(
-                            @"{0}\Lib\10.0.26100.0\{1}\ntdllp.lib",
-                            ProjectPath.ReferencesRoot,
-                            Platform));
+                        ProjectPath.GetLibraryPath(
+                            "10.0.26100.0",
+                            Platform,
+                            "ntdllp.lib"));
                 if (Library.Symbols != null)
                 {
                     Sources.Add(Platform, Library.Symbols);
@@ -99,10 +99,10 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                 }
                 ImageArchive.Archive Library =
                     ImageArchive.Parse(
-                        string.Format(
-                            @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
-                            ProjectPath.ReferencesRoot,
-                            Platform));
+                        ProjectPath.GetLibraryPath(
+                            "10.0.26100.0",
+                            Platform,
+                            "ntoskrnl.lib"));
                 if (Library.Symbols != null)
                 {
                     Sources.Add(Platform, Library.Symbols);
@@ -134,17 +134,17 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                 Utilities.PrintSeparator();
                 SortedSet<string> StaticList = ImageArchive.ListSymbols(
                     ImageArchive.Parse(
-                        string.Format(
-                            @"{0}\Lib\10.0.26100.0\{1}\libcntpr.lib",
-                            ProjectPath.ReferencesRoot,
-                            Platform)).Symbols);
+                        ProjectPath.GetLibraryPath(
+                            "10.0.26100.0",
+                            Platform,
+                            "libcntpr.lib")).Symbols);
                 SortedDictionary<string, SortedSet<string>> DynamicCategories =
                     ImageArchive.CategorizeSymbols(
                         ImageArchive.Parse(
-                            string.Format(
-                                @"{0}\Lib\10.0.26100.0\{1}\ntoskrnl.lib",
-                                ProjectPath.ReferencesRoot,
-                                Platform)).Symbols);
+                            ProjectPath.GetLibraryPath(
+                                "10.0.26100.0",
+                                Platform,
+                                "ntoskrnl.lib")).Symbols);
                 RemoveNtSymbols(DynamicCategories);
                 SortedSet<string> DynamicList =
                     ImageArchive.ListSymbols(DynamicCategories);
