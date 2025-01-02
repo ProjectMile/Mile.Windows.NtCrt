@@ -11,12 +11,6 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
             "x64"
         };
 
-        private static void PrintSeparator()
-        {
-            Console.WriteLine(
-                "------------------------------------------------------------");
-        }
-
         private static void GenerateUefiCrtObjectsSymbolsLists()
         {
             SortedDictionary<string, int> ReferenceCounts =
@@ -100,7 +94,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
                 Console.WriteLine("{0} Common Symbols", Platform);
-                PrintSeparator();
+                Utilities.PrintSeparator();
                 foreach (var Category in Categories)
                 {
                     if (IncludeObjectList.Contains(Category.Key))
@@ -116,7 +110,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                         }
                     }
                 }
-                PrintSeparator();
+                Utilities.PrintSeparator();
             }
 
             foreach (string Platform in SupportedPlatforms)
@@ -130,7 +124,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                 SortedDictionary<string, SortedSet<string>> Categories =
                     ImageArchive.CategorizeSymbols(Library.Symbols);
                 Console.WriteLine("{0} Specialized Symbols", Platform);
-                PrintSeparator();
+                Utilities.PrintSeparator();
                 foreach (var Category in Categories)
                 {
                     if (!IncludeObjectList.Contains(Category.Key))
@@ -138,7 +132,7 @@ namespace Mile.NtCrt.UefiCrtLibraryGenerator
                         Console.WriteLine("{0}", Category.Key);
                     }
                 }
-                PrintSeparator();
+                Utilities.PrintSeparator();
             }
         }
 

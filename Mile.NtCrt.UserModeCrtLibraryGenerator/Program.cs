@@ -12,12 +12,6 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
             "x86"
         };
 
-        private static void PrintSeparator()
-        {
-            Console.WriteLine(
-                "------------------------------------------------------------");
-        }
-
         private static void RemoveNtSymbols(
             SortedDictionary<string, SortedSet<string>> Categories)
         {
@@ -80,16 +74,16 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                 }
             }
             Console.WriteLine("ntdllp.lib");
-            PrintSeparator();
+            Utilities.PrintSeparator();
             foreach (var Source in Sources)
             {
                 Console.WriteLine("{0} Symbols", Source.Key);
-                PrintSeparator();
+                Utilities.PrintSeparator();
                 PrintNtCrtSymbolsLists(
                     ImageArchive.CategorizeSymbols(
                         Source.Value,
                         Source.Key == "x86"));
-                PrintSeparator();
+                Utilities.PrintSeparator();
             }
         }
 
@@ -115,21 +109,21 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                 }
             }
             Console.WriteLine("ntoskrnl.lib");
-            PrintSeparator();
+            Utilities.PrintSeparator();
             foreach (var Source in Sources)
             {
                 Console.WriteLine("{0} Symbols", Source.Key);
-                PrintSeparator();
+                Utilities.PrintSeparator();
                 PrintNtCrtSymbolsLists(
                     ImageArchive.CategorizeSymbols(Source.Value));
-                PrintSeparator();
+                Utilities.PrintSeparator();
             }
         }
 
         private static void GenerateAdditionalSymbolLists()
         {
             Console.WriteLine("Additional Symbols");
-            PrintSeparator();
+            Utilities.PrintSeparator();
             foreach (string Platform in SupportedPlatforms)
             {
                 if (Platform == "x86")
@@ -137,7 +131,7 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                     continue;
                 }
                 Console.WriteLine("{0} Symbols", Platform);
-                PrintSeparator();
+                Utilities.PrintSeparator();
                 SortedSet<string> StaticList = ImageArchive.ListSymbols(
                     ImageArchive.Parse(
                         string.Format(
@@ -161,7 +155,7 @@ namespace Mile.NtCrt.UserModeCrtLibraryGenerator
                         Console.WriteLine(Symbol);
                     }
                 }
-                PrintSeparator();
+                Utilities.PrintSeparator();
             }
         }
 
