@@ -1,3 +1,58 @@
 ﻿LIBRARY
 
 EXPORTS
+
+; Defined by Mile.NtCrt.Uefi.Stubs.cpp
+_errno
+
+; Defined in xtoa.obj from libucrt.lib
+_i64toa_s
+_i64tow_s
+_itoa_s
+_itow_s
+_ltoa_s
+_ltow_s
+_ui64toa_s
+_ui64tow_s
+_ultoa_s
+_ultow_s
+
+; Defined in strcat_s.obj from libucrt.lib
+strcat_s
+
+; Defined in strcpy_s.obj from libucrt.lib
+strcpy_s
+
+; Defined in strncat_s.obj from libucrt.lib
+strncat_s
+
+; Defined in strncpy_s.obj from libucrt.lib
+strncpy_s
+
+; Defined in wcscat_s.obj from libucrt.lib
+wcscat_s
+
+; Defined in wcscpy_s.obj from libucrt.lib
+wcscpy_s
+
+; Defined in wcsncat_s.obj from libucrt.lib
+wcsncat_s
+
+; Defined in wcsncpy_s.obj from libucrt.lib
+wcsncpy_s
+
+; Existed in xtoa.obj from libcntpr.lib
+; But uses xtoa.obj from libucrt.lib
+_i64toa
+_itoa
+_ltoa
+_ui64toa
+_ultoa
+
+; Existed in xtoa.obj from libcntpr.lib
+; But uses xtow.obj from libucrt.lib
+_i64tow
+_itow
+_ltow
+_ui64tow
+_ultow

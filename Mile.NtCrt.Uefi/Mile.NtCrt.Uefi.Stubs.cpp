@@ -7,3 +7,18 @@
  *
  * MAINTAINER: MouriNaruto (Kenji.Mouri@outlook.com)
  */
+
+namespace
+{
+    int g_errno = 0;
+}
+
+extern "C" void __cdecl _invalid_parameter_noinfo()
+{
+    // Do nothing.
+}
+
+extern "C" int* __cdecl _errno()
+{
+    return &g_errno;
+}
