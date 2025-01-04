@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  PROJECT:   Mouri Internal Library Essentials
+  FILE:      Mile.NtCrt.Uefi.props
+  PURPOSE:   Property sheet for Windows Driver Kit C Runtime for UEFI
+
+  LICENSE:   The MIT License
+
+  MAINTAINER: MouriNaruto (Kenji.Mouri@outlook.com)
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MileNtCrtUefiObjectPath>$(MSBuildThisFileDirectory)Source\$(PlatformShortName)\</MileNtCrtUefiObjectPath>
+  </PropertyGroup>
+  <Target Name="MileNtCrtUefiBuildSource" BeforeTargets="BeforeClCompile">
+    
+  </Target>
+</Project>

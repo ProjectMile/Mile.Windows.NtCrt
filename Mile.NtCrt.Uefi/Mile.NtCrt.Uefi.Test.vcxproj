@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CAB021B4-E73D-4732-9A8B-D3DD5294E538}</ProjectGuid>
+    <RootNamespace>Mile.NtCrt.Uefi.Test</RootNamespace>
+    <MileProjectType>DynamicLibrary</MileProjectType>
+    <MileProjectUseProjectProperties>true</MileProjectUseProjectProperties>
+    <MileProjectCompanyName>Project Mile</MileProjectCompanyName>
+    <MileProjectFileDescription>Windows Driver Kit C Runtime for UEFI Linking Test</MileProjectFileDescription>
+    <MileProjectInternalName>Mile.NtCrt.Uefi.Test</MileProjectInternalName>
+    <MileProjectLegalCopyright>© Project Mile. All rights reserved.</MileProjectLegalCopyright>
+    <MileProjectOriginalFilename>Mile.NtCrt.Uefi.Test.dll</MileProjectOriginalFilename>
+    <MileProjectProductName>Mile.Windows.UniCrt</MileProjectProductName>
+    <MileProjectVersion>1.1.$([System.DateTime]::Today.Subtract($([System.DateTime]::Parse('2024-12-29'))).TotalDays).0</MileProjectVersion>
+    <MileProjectVersionTag Condition="false">Alpha 1</MileProjectVersionTag>
+  </PropertyGroup>
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Platform.x64.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Platform.ARM64.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.Default.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <SDLCheck>false</SDLCheck>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ModuleDefinitionFile>Mile.NtCrt.Uefi.Test.def</ModuleDefinitionFile>
+      <AdditionalDependencies>$(OutDir)Mile.NtCrt.Uefi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Mile.NtCrt.Uefi.Test.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Mile.NtCrt.Uefi.vcxproj">
+      <Project>{C30EB22A-B1CB-4F42-9235-5BE1E3FD9C56}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Mile.NtCrt.Uefi.Test.cpp" />
+  </ItemGroup>
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.targets" />
+</Project>
