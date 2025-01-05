@@ -385,3 +385,40 @@ _rotr64
 
 ; Defined in setjmpex.obj from libcntpr.lib
 _setjmpex
+
+; Defined in strrev.obj from libcntpr.lib
+_strrev
+
+; Defined in strset.obj from libcntpr.lib
+_strset
+
+; Defined in wcspbrk.obj from libcntpr.lib
+wcspbrk
+
+; Defined in wcsrchr_arm64.obj or wcsrchr_amd64.obj from libcntpr.lib
+wcsrchr
+
+; Defined in wcsrev.obj from libcntpr.lib
+_wcsrev
+
+; Defined in wcsset_s.obj from libcntpr.lib
+_wcsset_s
+
+; Defined in wcsset.obj from libcntpr.lib
+_wcsset
+
+; Defined in wcsspn.obj from libcntpr.lib
+wcsspn
+
+; Defined in wcsstr_arm64.obj or wcsstr_amd64.obj from libcntpr.lib
+wcsstr
+
+; Defined in wcstok.obj from libcntpr.lib
+wcstok
+
+; Defined in _wcsxfrm.obj from libcntpr.lib
+wcsxfrm
+
+; Defined in chkstk.obj from libcntpr.lib
+__chkstk
+_alloca_probe
