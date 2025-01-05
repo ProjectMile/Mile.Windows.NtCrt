@@ -41,6 +41,10 @@ wcsncat_s
 ; Defined in wcsncpy_s.obj from libucrt.lib
 wcsncpy_s
 
+; Defined in memcpy_s.obj from libucrt.lib
+memcpy_s
+memmove_s
+
 ; Existed in xtoa.obj from libcntpr.lib
 ; But uses xtoa.obj from libucrt.lib
 _i64toa
