@@ -493,3 +493,89 @@ qsort_s
 
 ; Defined in qsort.obj from libcntpr.lib
 qsort
+
+; Defined in output.obj from libcntpr.lib
+__lookuptable
+_output_l
+
+; Defined in outputp.obj from libcntpr.lib
+_output_p_l
+_validate_param_reuseA
+get_crtdouble_arg
+get_short_arg
+
+; Defined in vsnprint.obj from libcntpr.lib
+_vsnprintf
+_vsnprintf_l
+
+; Defined in vsprintf.obj from libcntpr.lib
+_vscprintf
+_vscprintf_helper
+_vscprintf_l
+_vscprintf_p
+_vscprintf_p_l
+_vsprintf_l
+vsprintf
+
+; Defined in snprintf.obj from libcntpr.lib
+_snprintf
+
+; Defined in sprintf.obj from libcntpr.lib
+sprintf
+
+; Defined in ungetc.obj from libcntpr.lib
+_ungetc_nolock
+
+; Defined in input.obj from libcntpr.lib
+_input_l
+
+; Defined in inputs.obj from libcntpr.lib
+_input_s_l
+
+; Defined in snscanf.obj from libcntpr.lib
+_snscanf
+_snscanf_l
+_snscanf_s_l
+
+; Defined in sscanf.obj from libcntpr.lib
+_sscanf_l
+_sscanf_s_l
+sscanf
+
+; Defined in woutput.obj from libcntpr.lib
+_woutput_l
+
+; Defined in woutputp.obj from libcntpr.lib
+__nullstring
+__wnullstring
+_validate_param_reuseW
+_woutput_p_l
+get_int_arg
+get_int64_arg
+
+; Defined in vsnwprnt.obj from libcntpr.lib
+_vsnwprintf
+_vsnwprintf_l
+
+; Defined in vswprint.obj from libcntpr.lib
+__vswprintf_l
+_vscwprintf
+_vscwprintf_helper
+_vscwprintf_l
+_vscwprintf_p
+_vscwprintf_p_l
+_vswprintf
+_vswprintf_l
+
+; Defined in vswprold.obj from libcntpr.lib
+vswprintf
+
+; Defined in snwprint.obj from libcntpr.lib
+_snwprintf
+
+; Defined in swprintf.obj from libcntpr.lib
+__swprintf_l
+_swprintf
+
+; Defined in swprnold.obj from libcntpr.lib
+swprintf
