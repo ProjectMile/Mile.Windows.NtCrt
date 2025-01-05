@@ -50,4 +50,5 @@ extern "C" __declspec(noreturn) void __cdecl __report_gsfailure(
     uintptr_t stack_cookie)
 {
     stack_cookie;
+    for (;;) {}
 }
