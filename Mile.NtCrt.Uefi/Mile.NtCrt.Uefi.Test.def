@@ -267,3 +267,66 @@ _strnicoll
 ; Defined in _strupr.obj from libcntpr.lib
 _strupr
 _strupr_s
+
+; Defined in strrchr.obj or strrchr_amd64.obj from libcntpr.lib
+strrchr
+
+; Defined in strstr_arm64.obj or strstr_amd64.obj from libcntpr.lib
+strstr
+
+; Defined in wcscat.obj from libcntpr.lib
+wcscat
+wcscpy
+
+; Defined in wcschr_arm64.obj or wcschr_amd64.obj from libcntpr.lib
+wcschr
+
+; Defined in wcscmpc.obj from libcntpr.lib
+wcscmp
+
+; Defined in wcscspn.obj from libcntpr.lib
+wcscspn
+
+; Defined in wcslen_arm64.obj or wcslen.obj from libcntpr.lib
+wcslen
+
+; Defined in wcslen_arm64.obj or wcslen_s.obj from libcntpr.lib
+wcsnlen
+
+; Defined in wcsncat.obj from libcntpr.lib
+wcsncat
+
+; Defined in wcsncmp.obj from libcntpr.lib
+wcsncmp
+
+; Defined in wcsncnt.obj from libcntpr.lib
+__wcsncnt
+
+; Defined in wcsncpy.obj from libcntpr.lib
+wcsncpy
+
+; Defined in wcsnset_s.obj from libcntpr.lib
+_wcsnset_s
+
+; Defined in wcsnset.obj from libcntpr.lib
+_wcsnset
+
+; Defined in _wcsicmp.obj from libcntpr.lib
+_wcsicmp
+
+; Defined in _wcslwr.obj from libcntpr.lib
+_wcslwr
+_wcslwr_s
+
+; Defined in _wcsncoll.obj from libcntpr.lib
+_wcsncoll
+
+; Defined in _wcsnicmp.obj from libcntpr.lib
+_wcsnicmp
+
+; Defined in _wcsnicol.obj from libcntpr.lib
+_wcsnicoll
+
+; Defined in _wcsupr.obj from libcntpr.lib
+_wcsupr
+_wcsupr_s
