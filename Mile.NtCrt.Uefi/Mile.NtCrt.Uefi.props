@@ -13,17 +13,9 @@
     <MileNtCrtUefiObjectPath>$(MSBuildThisFileDirectory)Source\$(PlatformShortName)\</MileNtCrtUefiObjectPath>
   </PropertyGroup>
   <Target Name="MileNtCrtUefiBuildSource" BeforeTargets="BeforeClCompile">
-    <!-- Objects from libucrt.lib in Windows 11 SDK 10.0.26100.0 -->
     <ItemGroup>
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\xtoa.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\strcat_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\strcpy_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\strncat_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\strncpy_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\wcscat_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\wcscpy_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\wcsncat_s.obj" />
-      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\wcsncpy_s.obj" />
+      <!-- Objects from libucrt.lib in Windows 11 SDK 10.0.26100.0 -->
+      <Object Include="$(MileNtCrtUefiObjectPath)libucrt\*.obj" />
     </ItemGroup>
   </Target>
 </Project>
