@@ -422,3 +422,37 @@ wcsxfrm
 ; Defined in chkstk.obj from libcntpr.lib
 __chkstk
 _alloca_probe
+
+; Defined in splitpat.obj from libcntpr.lib
+_splitpath
+
+; Defined in _tolower.obj from libcntpr.lib
+tolower
+
+; Defined in _towlower.obj from libcntpr.lib
+towlower
+
+; Defined in gs_cookie.obj from libcntpr.lib
+__security_cookie
+__security_cookie_complement
+
+; Defined in printfcount.obj from libcntpr.lib
+_get_printf_count_output
+_set_printf_count_output
+
+; Defined in outputformat.obj from libcntpr.lib
+_get_output_format
+_outputformat
+_set_output_format
+
+; Defined in _filbuf.obj from libcntpr.lib
+_filbuf
+
+; Defined in _flsbuf.obj from libcntpr.lib
+_flsbuf
+
+; Defined in _flswbuf.obj from libcntpr.lib
+_flswbuf
+
+; Defined in _getbuf.obj from libcntpr.lib
+_getbuf
