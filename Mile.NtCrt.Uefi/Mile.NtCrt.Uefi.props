@@ -16,6 +16,8 @@
     <ItemGroup>
       <!-- Objects from libucrt.lib in Windows 11 SDK 10.0.26100.0 -->
       <Object Include="$(MileNtCrtUefiObjectPath)libucrt\*.obj" />
+      <!-- Objects from libcntpr.lib in Windows 11 WDK 10.0.26100.0 -->
+      <Object Include="$(MileNtCrtUefiObjectPath)libcntpr\*.obj" />
     </ItemGroup>
   </Target>
 </Project>
