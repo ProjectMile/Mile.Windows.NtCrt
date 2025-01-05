@@ -191,3 +191,79 @@ _wtoi64
 _wtoi64_l
 _wtol
 _wtol_l
+
+; Defined in __memicmp.obj from libcntpr.lib
+_memicmp
+_memicmp_l
+
+; Defined in memccpy.obj from libcntpr.lib
+_memccpy
+
+; Defined in memchr.obj from libcntpr.lib
+memchr
+
+; Defined in memcmp.obj from libcntpr.lib
+memcmp
+
+; Defined in memcpy.obj from libcntpr.lib
+memcpy
+memmove
+
+; Defined in memset.obj from libcntpr.lib
+memset
+
+; Defined in strcat.obj from libcntpr.lib
+strcat
+
+; Defined in strcat.obj or strcpy.obj from libcntpr.lib
+strcpy
+
+; Defined in strchr.obj or strchr_amd64.obj from libcntpr.lib
+strchr
+
+; Defined in strcmp.obj from libcntpr.lib
+strcmp
+
+; Defined in strlen.obj from libcntpr.lib
+strlen
+
+; Defined in strncat.obj from libcntpr.lib
+strncat
+
+; Defined in strncmp.obj from libcntpr.lib
+strncmp
+
+; Defined in strncnt.obj from libcntpr.lib
+__strncnt
+
+; Defined in strncpy.obj from libcntpr.lib
+strncpy
+
+; Defined in strnlen.obj or strlen_s.obj from libcntpr.lib
+strnlen
+
+; Defined in strnset.obj from libcntpr.lib
+_strnset
+
+; Defined in __stricmp.obj from libcntpr.lib
+_stricmp
+
+; Defined in _strcoll.obj from libcntpr.lib
+strcoll
+
+; Defined in _strlwr.obj from libcntpr.lib
+_strlwr
+_strlwr_s
+
+; Defined in _strncoll.obj from libcntpr.lib
+_strncoll
+
+; Defined in _strnicmp.obj from libcntpr.lib
+_strnicmp
+
+; Defined in _strnicol.obj from libcntpr.lib
+_strnicoll
+
+; Defined in _strupr.obj from libcntpr.lib
+_strupr
+_strupr_s
