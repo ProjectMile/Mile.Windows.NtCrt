@@ -330,3 +330,54 @@ _wcsnicoll
 ; Defined in _wcsupr.obj from libcntpr.lib
 _wcsupr
 _wcsupr_s
+
+; Defined in swab.obj from libcntpr.lib
+_swab
+
+; Defined in abs.obj from libcntpr.lib
+_abs64
+abs
+
+; Defined in bsearch_s.obj from libcntpr.lib
+bsearch_s
+
+; Defined in bsearch.obj from libcntpr.lib
+bsearch
+
+; Defined in div.obj from libcntpr.lib
+div
+
+; Defined in labs.obj from libcntpr.lib
+labs
+
+; Defined in ldiv.obj from libcntpr.lib
+ldiv
+
+; Defined in lfind_s.obj from libcntpr.lib
+_lfind_s
+
+; Defined in lfind.obj from libcntpr.lib
+_lfind
+
+; Defined in lsearch_s.obj from libcntpr.lib
+_lsearch_s
+
+; Defined in lsearch.obj from libcntpr.lib
+_lsearch
+
+; Defined in rand.obj from libcntpr.lib
+rand
+srand
+
+; Defined in rotl.obj from libcntpr.lib
+_lrotl
+_rotl
+_rotl64
+
+; Defined in rotr.obj from libcntpr.lib
+_lrotr
+_rotr
+_rotr64
+
+; Defined in setjmpex.obj from libcntpr.lib
+_setjmpex
