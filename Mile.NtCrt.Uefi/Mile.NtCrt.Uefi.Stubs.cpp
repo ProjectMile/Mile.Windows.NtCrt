@@ -8,8 +8,6 @@
  * MAINTAINER: MouriNaruto (Kenji.Mouri@outlook.com)
  */
 
-#include <stdint.h>
-
 namespace
 {
     int g_errno = 0;
@@ -24,6 +22,15 @@ extern "C" void __cdecl _invalid_parameter_noinfo()
 {
     // Do nothing.
 }
+
+#ifndef _UINTPTR_T_DEFINED
+#define _UINTPTR_T_DEFINED
+#ifdef _WIN64
+typedef unsigned __int64 uintptr_t;
+#else
+typedef unsigned int uintptr_t;
+#endif
+#endif
 
 extern "C" void __cdecl _invalid_parameter(
     wchar_t const* const expression,

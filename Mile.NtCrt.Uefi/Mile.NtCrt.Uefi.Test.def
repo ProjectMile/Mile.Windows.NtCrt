@@ -459,3 +459,37 @@ _flswbuf
 
 ; Defined in _getbuf.obj from libcntpr.lib
 _getbuf
+
+; Defined in gshandler.obj from libcntpr.lib
+__GSHandlerCheck
+__GSHandlerCheckCommon
+
+; Defined in matherr.obj from libcntpr.lib
+_matherr
+_matherr_flag
+
+; Defined in frnd.obj or fpsr.obj from libcntpr.lib
+_frnd
+
+; Defined in util.obj from libcntpr.lib
+_add_exp
+_d_ind
+_d_inf
+_d_max
+_d_min
+_d_mzero
+_decomp
+_get_exp
+_set_bexp
+_set_exp
+_sptype
+
+; Defined in fputwc.obj from libcntpr.lib
+_fputwc_nolock
+putwc
+
+; Defined in qsort_s.obj from libcntpr.lib
+qsort_s
+
+; Defined in qsort.obj from libcntpr.lib
+qsort
