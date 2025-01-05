@@ -38,3 +38,9 @@ extern "C" void __cdecl _invalid_parameter(
     line_number;
     reserved;
 }
+
+extern "C" __declspec(noreturn) void __cdecl __report_gsfailure(
+    uintptr_t stack_cookie)
+{
+    stack_cookie;
+}

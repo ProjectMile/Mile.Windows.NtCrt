@@ -61,6 +61,9 @@ _ltow
 _ui64tow
 _ultow
 
+; Defined in arm64secgs.obj or amdsecgs.obj from BufferOverflow.lib
+__security_check_cookie
+
 ; Defined in ctype.obj from libcntpr.lib
 __newclmap
 __newctype
