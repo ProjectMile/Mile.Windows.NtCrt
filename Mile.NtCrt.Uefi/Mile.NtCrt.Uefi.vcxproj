@@ -5,10 +5,10 @@
     <RootNamespace>Mile.NtCrt.Uefi</RootNamespace>
     <MileProjectType>StaticLibrary</MileProjectType>
   </PropertyGroup>
-  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Platform.x64.props" />
-  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Platform.ARM64.props" />
-  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.Default.props" />
-  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1622" Project="Mile.Project.Platform.x64.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1622" Project="Mile.Project.Platform.ARM64.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1622" Project="Mile.Project.Cpp.Default.props" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1622" Project="Mile.Project.Cpp.props" />
   <Import Project="Mile.NtCrt.Uefi.props" />
   <ItemDefinitionGroup>
     <ClCompile>
@@ -23,5 +23,5 @@
   <ItemGroup>
     <ClCompile Include="Mile.NtCrt.Uefi.Stubs.cpp" />
   </ItemGroup>
-  <Import Sdk="Mile.Project.Configurations" Version="1.0.1426" Project="Mile.Project.Cpp.targets" />
+  <Import Sdk="Mile.Project.Configurations" Version="1.0.1622" Project="Mile.Project.Cpp.targets" />
 </Project>
