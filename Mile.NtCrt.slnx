@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Mile.NtCrt.Uefi/Mile.NtCrt.Uefi.Test.vcxproj" Id="cab021b4-e73d-4732-9a8b-d3dd5294e538" />
+  <Project Path="Mile.NtCrt.Uefi/Mile.NtCrt.Uefi.vcxproj" Id="c30eb22a-b1cb-4f42-9235-5be1e3fd9c56" />
+</Solution>

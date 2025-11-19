@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Mile.NtCrt.GeneratorCore/Mile.NtCrt.GeneratorCore.csproj" />
+  <Project Path="Mile.NtCrt.UefiCrtLibraryGenerator/Mile.NtCrt.UefiCrtLibraryGenerator.csproj" />
+  <Project Path="Mile.NtCrt.UserModeCrtLibraryGenerator/Mile.NtCrt.UserModeCrtLibraryGenerator.csproj" />
+</Solution>
