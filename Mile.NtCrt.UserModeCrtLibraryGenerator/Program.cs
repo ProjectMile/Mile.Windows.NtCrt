@@ -1,5 +1,4 @@
 ﻿using Mile.NtCrt.GeneratorCore;
-using Mile.Project.Helpers;
 
 namespace Mile.NtCrt.UserModeCrtLibraryGenerator
 {

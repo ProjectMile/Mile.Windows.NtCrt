@@ -1,11 +1,10 @@
-﻿using Mile.Project.Helpers;
+﻿using Mile.DotNet.Helpers;
 
 namespace Mile.NtCrt.GeneratorCore
 {
     public class ProjectPath
     {
-        public static readonly string RepositoryRoot =
-            GitRepository.GetRootPath();
+        public static readonly string RepositoryRoot = Git.GetRootPath();
 
         public static readonly string ReferencesRoot =
             RepositoryRoot + @"\Mile.NtCrt.References";
